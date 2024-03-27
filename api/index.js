@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const express = require("express");
 const cors = require('cors');
-const {connectDB} = require("./config/connectDB");
+const {connectDB} = require("../config/connectDB");
 
 const path = require('path');
 const mongoose = require("mongoose");
@@ -15,12 +15,12 @@ connectDB()
 const port = process.env.PORT || 3000;
 
 //routers
-const {userRouter} = require("./routers/userRouter");
-const {authRouter} = require("./routers/authRouter");
-const {listingRouter} = require("./routers/listingRouter");
+const {userRouter} = require("../routers/userRouter");
+const {authRouter} = require("../routers/authRouter");
+const {listingRouter} = require("../routers/listingRouter");
 //middlewares
-const {notFound} = require("./middlewares/notFound");
-const {errHandler} = require("./middlewares/errHandler");
+const {notFound} = require("../middlewares/notFound");
+const {errHandler} = require("../middlewares/errHandler");
 
 app.use(express.json())
 app.use(cors())
